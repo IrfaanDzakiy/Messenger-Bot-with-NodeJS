@@ -12,18 +12,19 @@ const checkNo = (s) => {
 }
 
 const getDays = (birthday) =>{
+  console.log("in get days")
   var now = moment().toObject();
-  var birth = {...birthday.toObject(), years:now.years}
+  var birth = {...birthday, years:now.years}
 
   var a = moment(now);
   var b = moment(birth);
 
-  var diff = b.diff(a, 'days');
+  var diff = b.diff(a, 'days', true);
   if ( diff >= 0){
-    return diff
+    return Math.ceil(diff)
   }
   else{
-    return 365+diff
+    return 365+Math.ceil(diff)
   }
 }
 

@@ -1,6 +1,6 @@
 module.exports = {
   session: {
-    driver: 'memory',
+    driver: 'mongo',
     stores: {
       memory: {
         maxSize: 500,
@@ -15,7 +15,7 @@ module.exports = {
         db: 0,
       },
       mongo: {
-        url: 'mongodb://localhost:27017',
+        url: process.env.MONGO_URI || 'mongodb://localhost:27017/messenger-bot',
         collectionName: 'sessions',
       },
     },
