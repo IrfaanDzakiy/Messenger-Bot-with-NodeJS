@@ -1,4 +1,4 @@
 // Procfile
 
 web: npm start
-release: ./release-task.sh
+release: chmod u+x release.sh && ./release.sh
